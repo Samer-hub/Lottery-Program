@@ -1,32 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Lottoprogram
 {
     public partial class Form1 : Form
     {
-         int[] lottoRadNummer = {2, 4, 6, 8, 9, 1, 3 };
-
         public Form1()
         {
             InitializeComponent();
         }
 
-       
 
+        static private List<int> lottoRadNummer = new List<int>();
         private void postion1_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 int pos1 = int.Parse(postion1.Text);
-                lottoRadNummer[0] = pos1;
+                lottoRadNummer.Add(pos1);
             }
             catch (Exception)
             {
-                MessageBox.Show("ggg");
-                
+                MessageBox.Show("pos1");
+
             }
-            
+
         }
 
         private void postion2_TextChanged(object sender, EventArgs e)
@@ -34,55 +33,92 @@ namespace Lottoprogram
             try
             {
                 int pos2 = int.Parse(position2.Text);
-                lottoRadNummer[1] = pos2;
+                lottoRadNummer.Add(pos2);
             }
             catch (Exception)
             {
-                MessageBox.Show("333");
+                MessageBox.Show("pos2");
 
             }
-           
+
         }
 
         private void postion3_TextChanged(object sender, EventArgs e)
         {
             int pos3 = int.Parse(position3.Text);
-            lottoRadNummer[2] = pos3;
+            lottoRadNummer.Add(pos3);
         }
 
         private void postion4_TextChanged(object sender, EventArgs e)
         {
             int pos4 = int.Parse(position4.Text);
-            lottoRadNummer[3] = pos4;
+            lottoRadNummer.Add(pos4);
         }
 
         private void postion5_TextChanged(object sender, EventArgs e)
         {
             int pos5 = int.Parse(position5.Text);
-            lottoRadNummer[4] = pos5;
+            lottoRadNummer.Add(pos5);
         }
 
         private void postion6_TextChanged(object sender, EventArgs e)
         {
             int pos6 = int.Parse(position6.Text);
-            lottoRadNummer[5] = pos6;
+            lottoRadNummer.Add(pos6);
         }
 
         private void postion7_TextChanged(object sender, EventArgs e)
         {
+
             int pos7 = int.Parse(position7.Text);
-            lottoRadNummer[6] = pos7;
+            lottoRadNummer.Add(pos7);
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < lottoRadNummer.Length; i++)
+            string listString = "";
+            foreach (int pos in lottoRadNummer)
             {
-                MessageBox.Show(lottoRadNummer[i].ToString());
+                listString += pos + ",";
+
+            }
+            infoLabel.Text = listString;
+            slumpDragningsNummer();
+        }
+
+        private void slumpDragningsNummer()
+        {
+            List<List<int>> allLists = new List<List<int>>();
+            for (int j = 0; j < 10; j++)
+            {
+                List<int> dragningList = new List<int>();
+                Random rand = new Random();
+            
+                    for (int i = 0; i < 7; i++)
+                    {
+                        int positionNum = rand.Next(1, 36);
+                        if (!dragningList.Contains(positionNum))
+                        {
+                            dragningList.Add(positionNum);
+                        }
+                        else
+                        {
+                            i--;
+                        }
+                    }
+                allLists.Add(dragningList);
+            }
+            
+            foreach (List<int> lotteryNumbers in allLists)
+            {
+                foreach (int num in lotteryNumbers)
+                {
+                    listBox1.Items.Add(num);
+                }
+                listBox1.Items.Add("-----------------");
             }
 
         }
-
     }
 
 }

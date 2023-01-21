@@ -47,6 +47,7 @@ namespace Lottoprogram
             this.position3 = new System.Windows.Forms.TextBox();
             this.position2 = new System.Windows.Forms.TextBox();
             this.postion1 = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lottoLabel
@@ -163,6 +164,7 @@ namespace Lottoprogram
             this.position7.Name = "position7";
             this.position7.Size = new System.Drawing.Size(60, 20);
             this.position7.TabIndex = 1;
+            this.position7.TextChanged += new System.EventHandler(this.postion7_TextChanged);
             // 
             // position6
             // 
@@ -170,6 +172,7 @@ namespace Lottoprogram
             this.position6.Name = "position6";
             this.position6.Size = new System.Drawing.Size(60, 20);
             this.position6.TabIndex = 1;
+            this.position6.TextChanged += new System.EventHandler(this.postion6_TextChanged);
             // 
             // position5
             // 
@@ -177,6 +180,7 @@ namespace Lottoprogram
             this.position5.Name = "position5";
             this.position5.Size = new System.Drawing.Size(60, 20);
             this.position5.TabIndex = 1;
+            this.position5.TextChanged += new System.EventHandler(this.postion5_TextChanged);
             // 
             // position4
             // 
@@ -184,6 +188,7 @@ namespace Lottoprogram
             this.position4.Name = "position4";
             this.position4.Size = new System.Drawing.Size(60, 20);
             this.position4.TabIndex = 1;
+            this.position4.TextChanged += new System.EventHandler(this.postion4_TextChanged);
             // 
             // position3
             // 
@@ -191,6 +196,7 @@ namespace Lottoprogram
             this.position3.Name = "position3";
             this.position3.Size = new System.Drawing.Size(60, 20);
             this.position3.TabIndex = 1;
+            this.position3.TextChanged += new System.EventHandler(this.postion3_TextChanged);
             // 
             // position2
             // 
@@ -198,6 +204,7 @@ namespace Lottoprogram
             this.position2.Name = "position2";
             this.position2.Size = new System.Drawing.Size(60, 20);
             this.position2.TabIndex = 1;
+            this.position2.TextChanged += new System.EventHandler(this.postion2_TextChanged);
             // 
             // postion1
             // 
@@ -207,11 +214,20 @@ namespace Lottoprogram
             this.postion1.TabIndex = 1;
             this.postion1.TextChanged += new System.EventHandler(this.postion1_TextChanged);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(-2, 58);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 161);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.resultLabel7);
             this.Controls.Add(this.lottoLabel);
@@ -257,6 +273,7 @@ namespace Lottoprogram
         private System.Windows.Forms.TextBox dragningBox;
         private System.Windows.Forms.Label dragningLabel;
         private System.Windows.Forms.Label infoLabel;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
