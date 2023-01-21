@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Lottoprogram
@@ -84,31 +85,35 @@ namespace Lottoprogram
             }
             infoLabel.Text = listString;
             slumpDragningsNummer();
+            
         }
 
         private void slumpDragningsNummer()
         {
             List<List<int>> allLists = new List<List<int>>();
-            for (int j = 0; j < 10; j++)
+            Random rand = new Random();
+            for (int j = 0; j < 999999; j++)
             {
-                List<int> dragningList = new List<int>();
-                Random rand = new Random();
-            
-                    for (int i = 0; i < 7; i++)
+                //List<int> dragningList = new List<int>();
+                int[] dragningList = new int[7];            
+                for (int i = 0; i < 7; i++)
+                {
+                    int positionNum = rand.Next(1, 36);
+                    while (dragningList.Contains(positionNum))
                     {
-                        int positionNum = rand.Next(1, 36);
-                        if (!dragningList.Contains(positionNum))
-                        {
-                            dragningList.Add(positionNum);
-                        }
-                        else
-                        {
-                            i--;
-                        }
+                        positionNum = rand.Next(1, 36);
+                        //dragningList.Add(positionNum);
                     }
-                allLists.Add(dragningList);
+                    dragningList[i] = positionNum;
+                }
+                allLists.Add(dragningList.ToList());
+                count.Text = j.ToString();
+                
+
             }
+
             
+            /*
             foreach (List<int> lotteryNumbers in allLists)
             {
                 foreach (int num in lotteryNumbers)
@@ -116,7 +121,7 @@ namespace Lottoprogram
                     listBox1.Items.Add(num);
                 }
                 listBox1.Items.Add("-----------------");
-            }
+            }*/
 
         }
     }

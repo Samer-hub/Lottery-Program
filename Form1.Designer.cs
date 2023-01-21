@@ -47,7 +47,7 @@ namespace Lottoprogram
             this.position3 = new System.Windows.Forms.TextBox();
             this.position2 = new System.Windows.Forms.TextBox();
             this.postion1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.count = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lottoLabel
@@ -214,20 +214,21 @@ namespace Lottoprogram
             this.postion1.TabIndex = 1;
             this.postion1.TextChanged += new System.EventHandler(this.postion1_TextChanged);
             // 
-            // listBox1
+            // count
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(-2, 58);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 7;
+            this.count.AutoSize = true;
+            this.count.Location = new System.Drawing.Point(16, 101);
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(35, 13);
+            this.count.TabIndex = 7;
+            this.count.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 161);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.count);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.resultLabel7);
             this.Controls.Add(this.lottoLabel);
@@ -273,7 +274,7 @@ namespace Lottoprogram
         private System.Windows.Forms.TextBox dragningBox;
         private System.Windows.Forms.Label dragningLabel;
         private System.Windows.Forms.Label infoLabel;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label count;
     }
 }
 
