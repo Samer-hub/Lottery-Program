@@ -48,6 +48,7 @@ namespace Lottoprogram
             this.position2 = new System.Windows.Forms.TextBox();
             this.postion1 = new System.Windows.Forms.TextBox();
             this.count = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lottoLabel
@@ -76,9 +77,8 @@ namespace Lottoprogram
             this.resultLabel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.resultLabel7.Location = new System.Drawing.Point(430, 132);
             this.resultLabel7.Name = "resultLabel7";
-            this.resultLabel7.Size = new System.Drawing.Size(13, 13);
+            this.resultLabel7.Size = new System.Drawing.Size(0, 13);
             this.resultLabel7.TabIndex = 5;
-            this.resultLabel7.Text = "7";
             // 
             // rightLabel6
             // 
@@ -106,9 +106,8 @@ namespace Lottoprogram
             this.resultLabel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.resultLabel5.Location = new System.Drawing.Point(165, 132);
             this.resultLabel5.Name = "resultLabel5";
-            this.resultLabel5.Size = new System.Drawing.Size(13, 13);
+            this.resultLabel5.Size = new System.Drawing.Size(0, 13);
             this.resultLabel5.TabIndex = 5;
-            this.resultLabel5.Text = "5";
             // 
             // resultLabel6
             // 
@@ -116,9 +115,8 @@ namespace Lottoprogram
             this.resultLabel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.resultLabel6.Location = new System.Drawing.Point(284, 132);
             this.resultLabel6.Name = "resultLabel6";
-            this.resultLabel6.Size = new System.Drawing.Size(13, 13);
+            this.resultLabel6.Size = new System.Drawing.Size(0, 13);
             this.resultLabel6.TabIndex = 5;
-            this.resultLabel6.Text = "6";
             // 
             // rightLabel5
             // 
@@ -223,11 +221,20 @@ namespace Lottoprogram
             this.count.TabIndex = 7;
             this.count.Text = "label1";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(560, 50);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 161);
+            this.ClientSize = new System.Drawing.Size(714, 227);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.count);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.resultLabel7);
@@ -275,6 +282,7 @@ namespace Lottoprogram
         private System.Windows.Forms.Label dragningLabel;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label count;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
